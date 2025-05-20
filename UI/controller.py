@@ -12,8 +12,13 @@ class Controller:
         self._listCountry = []
 
     def fillDD(self):
-        pass
+        allYears=self._model.getYears()
+        for y in allYears:
+            self._view.ddyear.options.append(ft.dropdown.Option(y))
 
+        allCountries = self._model.getCountry()
+        for c in allCountries:
+            self._view.ddcountry.options.append(ft.dropdown.Option(c))
 
     def handle_graph(self, e):
         pass
